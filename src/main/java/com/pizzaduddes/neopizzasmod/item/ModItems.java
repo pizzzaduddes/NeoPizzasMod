@@ -12,10 +12,10 @@ import java.util.function.Function;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(NeoPizzasMod.MODID);
 
-    public static final DeferredItem<Item> TANZANITE = ITEMS.registerItem("tanzanite",
-            Item::new, new Item.Properties()
-                    .stacksTo(80)
-                    .rarity(Rarity.EPIC));
+    public static final DeferredItem<Item> TANZANITE = ITEMS.register("tanzanite",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(64)
+                    .rarity(Rarity.EPIC)));
 
     public static void register(IEventBus eventbus) {
     }
