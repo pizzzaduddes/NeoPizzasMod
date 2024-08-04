@@ -36,7 +36,6 @@ public class NeoPizzasMod {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        ModItems.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (NeoPizzasMod) to respond directly to events.
@@ -64,9 +63,7 @@ public class NeoPizzasMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.TANZANITE);
-        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
