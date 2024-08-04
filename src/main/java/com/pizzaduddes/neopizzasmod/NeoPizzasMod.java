@@ -1,6 +1,5 @@
 package com.pizzaduddes.neopizzasmod;
 
-import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
