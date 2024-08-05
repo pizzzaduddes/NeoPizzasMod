@@ -1,5 +1,6 @@
 package com.pizzaduddes.neopizzasmod;
 
+import com.pizzaduddes.neopizzasmod.item.ModCreativeModeTabs;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -38,6 +39,7 @@ public class NeoPizzasMod {
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (NeoPizzasMod) to respond directly to events.
