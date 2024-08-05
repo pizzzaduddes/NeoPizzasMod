@@ -1,6 +1,7 @@
-package com.pizzaduddes.neopizzasmod.item;
+package com.pizzaduddes.neopizzasmod.ui;
 
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
+import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

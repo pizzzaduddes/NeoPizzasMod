@@ -17,6 +17,7 @@ public class ModItems {
     public static final DeferredItem<Item> RAW_TANZANITE = ITEMS.register("raw_tanzanite",
             () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
+    public static final
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
