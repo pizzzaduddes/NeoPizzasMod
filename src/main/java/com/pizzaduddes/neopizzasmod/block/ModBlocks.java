@@ -33,7 +33,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> DEEPSLATE_TANZANITE_ORE = registerBlock("deepslate_tanzanite_ore",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_DIAMOND_ORE)
-                    .sound(SoundType.STONE)));
+                    .sound(SoundType.DEEPSLATE)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
