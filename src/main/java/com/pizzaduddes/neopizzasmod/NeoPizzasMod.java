@@ -1,5 +1,6 @@
 package com.pizzaduddes.neopizzasmod;
 
+import com.pizzaduddes.neopizzasmod.block.ModBlocks;
 import com.pizzaduddes.neopizzasmod.ui.ModCreativeModeTabs;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import org.slf4j.Logger;
@@ -37,6 +38,7 @@ public class NeoPizzasMod {
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
