@@ -1,6 +1,5 @@
 package com.pizzaduddes.neopizzasmod;
 
-import com.pizzaduddes.neopizzasmod.block.ModBlocks;
 import com.pizzaduddes.neopizzasmod.ui.ModCreativeModeTabs;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import org.slf4j.Logger;
@@ -39,7 +38,6 @@ public class NeoPizzasMod {
 
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
-        ModBlocks.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (NeoPizzasMod) to respond directly to events.

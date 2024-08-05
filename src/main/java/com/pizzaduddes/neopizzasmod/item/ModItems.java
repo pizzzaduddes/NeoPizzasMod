@@ -1,8 +1,6 @@
 package com.pizzaduddes.neopizzasmod.item;
 
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
-import com.pizzaduddes.neopizzasmod.block.ModBlocks;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
