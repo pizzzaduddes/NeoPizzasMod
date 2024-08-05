@@ -1,5 +1,8 @@
 {
   "item.neopizzasmod.tanzanite": "Tanzanite",
   "item.neopizzasmod.raw_tanzanite": "Raw Tanzanite",
+  "block.neopizzasmod.tanzanite_block": "Tanzanite Block",
+  "block.neopizzasmod.raw_tanzanite_block": "Raw Tanzanite Block",
+
   "tab.neopizzasmod": "Neo Pizzas Mod"
 }
