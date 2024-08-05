@@ -1,6 +1,7 @@
 package com.pizzaduddes.neopizzasmod.ui;
 
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
+import com.pizzaduddes.neopizzasmod.block.ModBlocks;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -23,6 +24,8 @@ public class ModCreativeModeTabs {
                             .displayItems((itemDisplayParameters, output) -> {
                                 output.accept(ModItems.TANZANITE.get());
                                 output.accept(ModItems.RAW_TANZANITE.get());
+                                output.accept(ModBlocks.TANZANITE_BLOCK.get());
+                                output.accept(ModBlocks.RAW_TANZANITE_BLOCK.get());
                             })
                             .build());
 
