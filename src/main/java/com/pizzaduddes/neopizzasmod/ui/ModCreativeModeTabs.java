@@ -26,6 +26,8 @@ public class ModCreativeModeTabs {
                                 output.accept(ModItems.RAW_TANZANITE.get());
                                 output.accept(ModBlocks.TANZANITE_BLOCK.get());
                                 output.accept(ModBlocks.RAW_TANZANITE_BLOCK.get());
+                                output.accept(ModBlocks.TANZANITE_ORE.get());
+                                output.accept(ModBlocks.DEEPSLATE_TANZANITE_ORE.get());
                             })
                             .build());
 
