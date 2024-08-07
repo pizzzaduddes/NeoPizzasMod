@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:raw_tanzanite_block"
+          "name": "neopizzasmod:raw_tanzanite_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "minecraft:blocks/raw_tanzanite_block"
+  "random_sequence": "neopizzasmod:blocks/raw_tanzanite_block"
 }
