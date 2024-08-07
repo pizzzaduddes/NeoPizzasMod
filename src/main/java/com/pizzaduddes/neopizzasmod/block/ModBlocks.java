@@ -21,19 +21,19 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> TANZANITE_BLOCK = registerBlock("tanzanite_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK)
-                    .sound(SoundType.AMETHYST)));
+                    .sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> RAW_TANZANITE_BLOCK = registerBlock("raw_tanzanite_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_GOLD_BLOCK)
-                    .sound(SoundType.ANCIENT_DEBRIS)));
+                    .sound(SoundType.ANCIENT_DEBRIS).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> TANZANITE_ORE = registerBlock("tanzanite_ore",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_ORE)
-                    .sound(SoundType.STONE)));
+                    .sound(SoundType.STONE).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> DEEPSLATE_TANZANITE_ORE = registerBlock("deepslate_tanzanite_ore",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_DIAMOND_ORE)
-                    .sound(SoundType.DEEPSLATE)));
+                    .sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
