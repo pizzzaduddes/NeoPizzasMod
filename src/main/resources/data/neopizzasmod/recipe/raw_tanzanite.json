@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "neopizzasmod:tanzanite_block"
+      "item": "neopizzasmod:raw_tanzanite_block"
     }
   ],
   "result": {
     "count": 4,
-    "id": "neopizzasmod:tanzanite"
+    "id": "neopizzasmod:raw_tanzanite"
   }
 }

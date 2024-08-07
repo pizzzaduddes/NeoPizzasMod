@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "neopizzasmod:tanzanite"
+      "item": "neopizzasmod:raw_tanzanite"
     }
   },
   "pattern": [
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "neopizzasmod:tanzanite_block"
+    "id": "neopizzasmod:raw_tanzanite_block"
   }
 }
