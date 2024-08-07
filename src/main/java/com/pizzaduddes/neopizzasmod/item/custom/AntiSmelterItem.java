@@ -23,9 +23,12 @@ public class AntiSmelterItem extends Item {
         if(!level.isClientSide()) {
             if(level.getBlockState(context.getClickedPos()).is(ModBlocks.TANZANITE_BLOCK)){
                 level.destroyBlock(context.getClickedPos(), false, context.getPlayer());
+
                 context.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), ((ServerPlayer) context.getPlayer()),
                 item -> Objects.requireNonNull(context.getPlayer()).onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+
                 level.setBlock(context.getClickedPos(), ModBlocks.RAW_TANZANITE_BLOCK.get().defaultBlockState(), 3);
+
                 return InteractionResult.SUCCESS;
             }
         }
