@@ -6,6 +6,9 @@
   "block.neopizzasmod.tanzanite_ore": "Tanzanite Ore",
   "block.neopizzasmod.deepslate_tanzanite_ore": "Deepslate Tanzanite Ore",
   "item.neopizzasmod.anti_smelter": "Anti Smelter",
+  "tooltip.neopizzasmod.antismelter.shift": "§8Press [§r§7Shift§r§8] for Details§r",
+  "tooltip.neopizzasmod.antismelter.l1": "§8Press [§r§fShift§r§8] for Details§r",
+  "tooltip.neopizzasmod.antismelter.l2": "test2 abc ABC 123",
 
   "tab.neopizzasmod": "Neo Pizzas Mod"
 }

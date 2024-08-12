@@ -1,14 +1,19 @@
 package com.pizzaduddes.neopizzasmod.item.custom;
 
 import com.pizzaduddes.neopizzasmod.block.ModBlocks;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 
+import java.util.List;
 import java.util.Objects;
 
 public class AntiSmelterItem extends Item {
@@ -33,5 +38,17 @@ public class AntiSmelterItem extends Item {
             }
         }
         return InteractionResult.PASS;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        if (Screen.hasShiftDown()){
+            tooltipComponents.add(Component.translatable("tooltip.neopizzasmod.antismelter.l1"));
+            tooltipComponents.add(Component.translatable("tooltip.neopizzasmod.antismelter.l2"));
+        } else {
+            tooltipComponents.add(Component.translatable("tooltip.neopizzasmod.antismelter.shift"));
+        }
+
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 }
