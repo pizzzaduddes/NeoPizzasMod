@@ -1,7 +1,6 @@
 package com.pizzaduddes.neopizzasmod.block;
 
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
-import com.pizzaduddes.neopizzasmod.block.custom.PainBlock;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -21,7 +20,7 @@ public class ModBlocks {
 
 
     public static final DeferredBlock<Block> TANZANITE_BLOCK = registerBlock("tanzanite_block",
-            () -> new PainBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK)
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK)
                     .sound(SoundType.AMETHYST).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> RAW_TANZANITE_BLOCK = registerBlock("raw_tanzanite_block",
