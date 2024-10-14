@@ -25,6 +25,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.TANZANITE_ORE.get(), ModItems.RAW_TANZANITE.get()));
         this.add(ModBlocks.DEEPSLATE_TANZANITE_ORE.get(),
                 block -> createOreDrop(ModBlocks.DEEPSLATE_TANZANITE_ORE.get(), ModItems.RAW_TANZANITE.get()));
+        dropSelf(ModBlocks.PEDESTAL.get());
     }
 
     @Override

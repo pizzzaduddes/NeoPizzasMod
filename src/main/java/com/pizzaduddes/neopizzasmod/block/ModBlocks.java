@@ -1,6 +1,7 @@
 package com.pizzaduddes.neopizzasmod.block;
 
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
+import com.pizzaduddes.neopizzasmod.block.custom.PedestalBlock;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -35,6 +36,9 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_DIAMOND_ORE)
                     .sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
 
+    public static final DeferredBlock<Block> PEDESTAL = registerBlock("pedestal",
+            () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SMOOTH_STONE)
+                    .noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

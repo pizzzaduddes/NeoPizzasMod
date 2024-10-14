@@ -1,6 +1,7 @@
 package com.pizzaduddes.neopizzasmod.item.custom;
 
 import com.pizzaduddes.neopizzasmod.block.ModBlocks;
+import com.pizzaduddes.neopizzasmod.component.ModDataComponentTypes;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -34,6 +35,8 @@ public class AntiSmelterItem extends Item {
 
                 level.setBlock(context.getClickedPos(), ModBlocks.RAW_TANZANITE_BLOCK.get().defaultBlockState(), 3);
 
+                context.getItemInHand().set(ModDataComponentTypes.COORDS.get(), context.getClickedPos());
+
                 return InteractionResult.SUCCESS;
             }
         }
@@ -47,6 +50,10 @@ public class AntiSmelterItem extends Item {
             tooltipComponents.add(Component.translatable("tooltip.neopizzasmod.antismelter.l2"));
         } else {
             tooltipComponents.add(Component.translatable("tooltip.neopizzasmod.antismelter.shift"));
+        }
+
+        if (stack.get(ModDataComponentTypes.COORDS.get()) != null) {
+                tooltipComponents.add(Component.literal("" + stack.get(ModDataComponentTypes.COORDS)));
         }
 
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
