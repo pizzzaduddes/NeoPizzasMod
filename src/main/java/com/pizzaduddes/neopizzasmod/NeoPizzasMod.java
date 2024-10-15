@@ -1,9 +1,13 @@
 package com.pizzaduddes.neopizzasmod;
 
 import com.pizzaduddes.neopizzasmod.block.ModBlocks;
+import com.pizzaduddes.neopizzasmod.block.entity.ModBlockEntities;
+import com.pizzaduddes.neopizzasmod.block.entity.renderer.PedestalBlockEntityRenderer;
 import com.pizzaduddes.neopizzasmod.component.ModDataComponentTypes;
 import com.pizzaduddes.neopizzasmod.ui.ModCreativeModeTabs;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -42,6 +46,7 @@ public class NeoPizzasMod {
         ModBlocks.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModDataComponentTypes.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (NeoPizzasMod) to respond directly to events.
@@ -84,9 +89,12 @@ public class NeoPizzasMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
         }
     }
 }
