@@ -2,6 +2,7 @@ package com.pizzaduddes.neopizzasmod.screen.custom;
 
 import com.pizzaduddes.neopizzasmod.block.ModBlocks;
 import com.pizzaduddes.neopizzasmod.block.entity.custom.PedestalBlockEntity;
+import com.pizzaduddes.neopizzasmod.screen.ModMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
@@ -24,9 +25,9 @@ public class PedestalMenu extends AbstractContainerMenu {
     }
 
     public PedestalMenu(int containerId, Inventory inv, BlockEntity blockEntity) {
-        super(, containerId);
+        super(ModMenuTypes.PEDESTAL_MENU.get(), containerId);
         this.blockEntity = ((PedestalBlockEntity) blockEntity);
-        this.level inv.player.level();
+        this.level = inv.player.level();
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);

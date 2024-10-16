@@ -4,6 +4,7 @@ import com.pizzaduddes.neopizzasmod.block.ModBlocks;
 import com.pizzaduddes.neopizzasmod.block.entity.ModBlockEntities;
 import com.pizzaduddes.neopizzasmod.block.entity.renderer.PedestalBlockEntityRenderer;
 import com.pizzaduddes.neopizzasmod.component.ModDataComponentTypes;
+import com.pizzaduddes.neopizzasmod.screen.ModMenuTypes;
 import com.pizzaduddes.neopizzasmod.ui.ModCreativeModeTabs;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -47,6 +48,7 @@ public class NeoPizzasMod {
         ModCreativeModeTabs.register(modEventBus);
         ModDataComponentTypes.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (NeoPizzasMod) to respond directly to events.
