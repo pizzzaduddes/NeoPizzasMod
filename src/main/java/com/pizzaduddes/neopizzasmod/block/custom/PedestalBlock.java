@@ -56,7 +56,7 @@ public class PedestalBlock extends BaseEntityBlock {
                             BlockState newState, boolean movedByPiston) {
         if(state.getBlock() != newState.getBlock()) {
             if (level.getBlockEntity(pos) instanceof PedestalBlockEntity pedestalBlockEntity) {
-                Containers.dropContents(level, pos, pedestalBlockEntity);
+                pedestalBlockEntity.drops();
                 level.updateNeighbourForOutputSignal(pos, this);
             }
         }
@@ -68,15 +68,15 @@ public class PedestalBlock extends BaseEntityBlock {
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
 
         if (level.getBlockEntity(pos) instanceof PedestalBlockEntity pedestalBlockEntity) {
-            if (pedestalBlockEntity.isEmpty() && !stack.isEmpty()) {
-                pedestalBlockEntity.setItem(0, stack);
+            if (pedestalBlockEntity.inventory.getStackInSlot(0).isEmpty() && !stack.isEmpty()) {
+                pedestalBlockEntity.inventory.insertItem(0, stack.copy(), false);
                 stack.shrink(1);
                 level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
 
-            } else if (stack.isEmpty() && !pedestalBlockEntity.isEmpty()) {
-                ItemStack stackOnPedestal = pedestalBlockEntity.getItem(0);
+            } else if (stack.isEmpty() && !pedestalBlockEntity.inventory.getStackInSlot(0).isEmpty()) {
+                ItemStack stackOnPedestal = pedestalBlockEntity.inventory.extractItem(0, 1, false);
                 player.setItemInHand(InteractionHand.MAIN_HAND, stackOnPedestal);
-                pedestalBlockEntity.clearContent();
+                pedestalBlockEntity.clearContents();
                 level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
         }   }
 
