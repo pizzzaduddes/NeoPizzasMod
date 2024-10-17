@@ -1,6 +1,7 @@
 package com.pizzaduddes.neopizzasmod.block.entity.custom;
 
 import com.pizzaduddes.neopizzasmod.block.entity.ModBlockEntities;
+import com.pizzaduddes.neopizzasmod.screen.custom.PedestalMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
@@ -96,7 +97,7 @@ public class PedestalBlockEntity extends BlockEntity implements MenuProvider {
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return
+        return new PedestalMenu(i, inventory, this);
     }
 
     @Nullable

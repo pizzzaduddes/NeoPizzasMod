@@ -25,7 +25,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.TANZANITE_BLOCK.get())
                 .add(ModBlocks.RAW_TANZANITE_BLOCK.get())
                 .add(ModBlocks.TANZANITE_ORE.get())
-                .add(ModBlocks.DEEPSLATE_TANZANITE_ORE.get());
+                .add(ModBlocks.DEEPSLATE_TANZANITE_ORE.get())
+                .add(ModBlocks.RUNE_STATION.get());
+
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.TANZANITE_BLOCK.get())
@@ -34,5 +36,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.RAW_TANZANITE_BLOCK.get());
+
+        this.tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.RUNE_STATION.get());
     }
 }

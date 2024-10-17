@@ -9,11 +9,14 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class PedestalScreen extends AbstractContainerScreen<PedestalMenu> {
-    private static final ResourceLocation GUI_TEXTURE =
-            ResourceLocation.fromNamespaceAndPath(NeoPizzasMod.MODID, "textures/gui/pedestal/pedestal_gui.png");
+public class RuneStationScreen extends AbstractContainerScreen<RuneStationMenu> {
 
-    public PedestalScreen(PedestalMenu menu, Inventory playerInventory, Component title) {
+    private static final ResourceLocation GUI_TEXTURE =
+            ResourceLocation.fromNamespaceAndPath(NeoPizzasMod.MODID,"textures/gui/rune_station/rune_station_gui.png");
+    private static final ResourceLocation ARROW_TEXTURE =
+            ResourceLocation.fromNamespaceAndPath(NeoPizzasMod.MODID,"textures/gui/rune_station/arrow_progress.png");
+
+    public RuneStationScreen(RuneStationMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
     }
 
@@ -22,6 +25,7 @@ public class PedestalScreen extends AbstractContainerScreen<PedestalMenu> {
         super.init();
 
         this.inventoryLabelY = 10000;
+        this.titleLabelY = 10000;
     }
 
     @Override
@@ -35,7 +39,12 @@ public class PedestalScreen extends AbstractContainerScreen<PedestalMenu> {
         guiGraphics.blit(GUI_TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
     }
 
-    @Override
+    private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
+        if(menu.isCrafting()) {
+            guiGraphics.blit(ARROW_TEXTURE,x + 73, y + 35, 0, 0, menu.getScaledArrowProgress(), 16, 24, 16);
+        }
+    }
+
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float delta) {
         renderBackground(guiGraphics, mouseX, mouseY, delta);
         super.render(guiGraphics, mouseX, mouseY, delta);

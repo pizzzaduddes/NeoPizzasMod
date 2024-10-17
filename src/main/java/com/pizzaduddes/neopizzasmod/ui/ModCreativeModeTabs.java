@@ -30,6 +30,8 @@ public class ModCreativeModeTabs {
                                 output.accept(ModBlocks.DEEPSLATE_TANZANITE_ORE.get());
                                 output.accept(ModItems.ANTI_SMELTER.get());
                                 output.accept(ModBlocks.PEDESTAL.get());
+                                output.accept(ModBlocks.RUNE_STATION.get());
+                                output.accept(ModItems.RUNE_ROCK.get());
                             })
                             .build());
 

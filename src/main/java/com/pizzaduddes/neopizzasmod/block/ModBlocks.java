@@ -2,6 +2,7 @@ package com.pizzaduddes.neopizzasmod.block;
 
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
 import com.pizzaduddes.neopizzasmod.block.custom.PedestalBlock;
+import com.pizzaduddes.neopizzasmod.block.custom.RuneStationBlock;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -19,6 +20,9 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(NeoPizzasMod.MODID);
 
+    public static final DeferredBlock<Block> RUNE_STATION = registerBlock("rune_station",
+            () -> new RuneStationBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)
+                    .requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> TANZANITE_BLOCK = registerBlock("tanzanite_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_BLOCK)

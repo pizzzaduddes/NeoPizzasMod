@@ -11,6 +11,9 @@
   "tooltip.neopizzasmod.antismelter.l2": "test2 abc ABC 123",
   "block.neopizzasmod.pedestal": "Pedestal",
   "pedestalbeinv": "Pedestal",
+  "item.neopizzasmod.rune_rock": "Rune Rock",
+  "block.neopizzasmod.rune_station": "Rune Station",
+  "blockentity.neopizzasmod.rune_station": "Skibidi Station",
 
   "tab.neopizzasmod": "Neo Pizzas Mod"
 }

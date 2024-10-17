@@ -12,6 +12,9 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(NeoPizzasMod.MODID);
 
 
+    public static final DeferredItem<Item> RUNE_ROCK = ITEMS.register("rune_rock",
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+
     public static final DeferredItem<Item> TANZANITE = ITEMS.register("tanzanite",
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
 

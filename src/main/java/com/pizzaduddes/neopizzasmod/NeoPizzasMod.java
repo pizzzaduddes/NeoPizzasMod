@@ -5,10 +5,13 @@ import com.pizzaduddes.neopizzasmod.block.entity.ModBlockEntities;
 import com.pizzaduddes.neopizzasmod.block.entity.renderer.PedestalBlockEntityRenderer;
 import com.pizzaduddes.neopizzasmod.component.ModDataComponentTypes;
 import com.pizzaduddes.neopizzasmod.screen.ModMenuTypes;
+import com.pizzaduddes.neopizzasmod.screen.custom.PedestalScreen;
+import com.pizzaduddes.neopizzasmod.screen.custom.RuneStationScreen;
 import com.pizzaduddes.neopizzasmod.ui.ModCreativeModeTabs;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -97,6 +100,12 @@ public class NeoPizzasMod {
         @SubscribeEvent
         public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
             event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
+            event.register(ModMenuTypes.RUNE_STATION_MENU.get(), RuneStationScreen::new);
         }
     }
 }
