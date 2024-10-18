@@ -28,6 +28,7 @@ public class RuneStationMenu extends AbstractContainerMenu {
         this.level = inv.player.level();
         this.data = data;
 
+
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
@@ -111,5 +112,9 @@ public class RuneStationMenu extends AbstractContainerMenu {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
+    }
+
+    public RuneStationBlockEntity getBlockEntity() {
+        return this.blockEntity;
     }
 }

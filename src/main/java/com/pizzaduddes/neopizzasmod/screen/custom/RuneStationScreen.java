@@ -2,6 +2,7 @@ package com.pizzaduddes.neopizzasmod.screen.custom;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
+import com.pizzaduddes.neopizzasmod.block.entity.custom.RuneStationBlockEntity;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -12,6 +13,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.neoforged.neoforge.client.gui.widget.ExtendedButton;
 
 public class RuneStationScreen extends AbstractContainerScreen<RuneStationMenu> {
+
 
     private static final ResourceLocation GUI_TEXTURE =
             ResourceLocation.fromNamespaceAndPath(NeoPizzasMod.MODID,"textures/gui/rune_station/rune_station_gui.png");
@@ -25,7 +27,9 @@ public class RuneStationScreen extends AbstractContainerScreen<RuneStationMenu> 
     @Override
     protected void init() {
         super.init();
-        this.addRenderableWidget(new ExtendedButton(73, 29, 15, 15, Component.literal("test"), button -> ));
+        this.addRenderableWidget(new ExtendedButton(73, 29, 15, 15,
+                Component.literal("test"),
+                button -> onButtonWaterPressed()));
 
         this.inventoryLabelY = 10000;
         this.titleLabelY = 10000;
@@ -53,5 +57,11 @@ public class RuneStationScreen extends AbstractContainerScreen<RuneStationMenu> 
         renderBackground(guiGraphics, mouseX, mouseY, delta);
         super.render(guiGraphics, mouseX, mouseY, delta);
         renderTooltip(guiGraphics, mouseX, mouseY);
+    }
+
+    private void onButtonWaterPressed() {
+        RuneStationBlockEntity blockEntity = this.menu.getBlockEntity();
+
+        blockEntity.current_recipe = 1;
     }
 }

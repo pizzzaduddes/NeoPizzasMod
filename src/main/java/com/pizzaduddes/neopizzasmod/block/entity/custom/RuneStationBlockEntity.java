@@ -24,6 +24,8 @@ import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 
 public class RuneStationBlockEntity extends BlockEntity implements MenuProvider {
+
+
     public final ItemStackHandler inventoryrs = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -34,7 +36,7 @@ public class RuneStationBlockEntity extends BlockEntity implements MenuProvider 
         }
     };
 
-    public int current_recipe = 1;
+    public int current_recipe = 0;
     private static final int ENERGY_ITEM_SLOT = 0;
     private static final int INPUT_SLOT = 1;
     private static final int OUTPUT_SLOT = 2;
@@ -128,11 +130,18 @@ public class RuneStationBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     private void craftItem() {
-        ItemStack output = new ItemStack(ModItems.TANZANITE.get());
+        ItemStack outputDefault = new ItemStack(ModItems.TANZANITE.get());
+        ItemStack outputWater = new ItemStack(ModItems.RAW_TANZANITE.get());
+        if (current_recipe == 0) {
+            inventoryrs.extractItem(INPUT_SLOT, 1, false);
+            inventoryrs.setStackInSlot(OUTPUT_SLOT, new ItemStack(outputDefault.getItem(),
+                    inventoryrs.getStackInSlot(OUTPUT_SLOT).getCount() + outputDefault.getCount()));
+        } else if (current_recipe == 1){
+            inventoryrs.extractItem(INPUT_SLOT, 1, false);
+            inventoryrs.setStackInSlot(OUTPUT_SLOT, new ItemStack(outputWater.getItem(),
+                    inventoryrs.getStackInSlot(OUTPUT_SLOT).getCount() + outputWater.getCount()));
+        }
 
-        inventoryrs.extractItem(INPUT_SLOT, 1, false);
-        inventoryrs.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(),
-                inventoryrs.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
     }
 
     private boolean hasCraftingFinished() {
