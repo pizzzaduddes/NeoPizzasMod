@@ -60,14 +60,16 @@ public class RuneStationBlock extends BaseEntityBlock {
                                               Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof RuneStationBlockEntity crystallizerBlockEntity) {
-                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(crystallizerBlockEntity, Component.literal("Crystallizer")), pPos);
+            if(entity instanceof RuneStationBlockEntity runeStationBlockEntity) {
+                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(runeStationBlockEntity, Component.literal("Crystallizer")), pPos);
+
+
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
         }
 
-        return ItemInteractionResult.sidedSuccess(pLevel.isClientSide());
+        return ItemInteractionResult.SUCCESS;
     }
 
     @Override

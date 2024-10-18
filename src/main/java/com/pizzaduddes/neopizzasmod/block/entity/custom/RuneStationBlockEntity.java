@@ -34,6 +34,7 @@ public class RuneStationBlockEntity extends BlockEntity implements MenuProvider 
         }
     };
 
+    public int current_recipe = 1;
     private static final int ENERGY_ITEM_SLOT = 0;
     private static final int INPUT_SLOT = 1;
     private static final int OUTPUT_SLOT = 2;
@@ -127,7 +128,7 @@ public class RuneStationBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     private void craftItem() {
-        ItemStack output = new ItemStack(ModItems.RUNE_ROCK.get());
+        ItemStack output = new ItemStack(ModItems.TANZANITE.get());
 
         inventoryrs.extractItem(INPUT_SLOT, 1, false);
         inventoryrs.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(),
