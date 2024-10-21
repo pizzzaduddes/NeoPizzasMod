@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "minecraft:block/blast_furnace_top",
+    "front": "neopizzasmod:block/rune_station_front",
+    "side": "neopizzasmod:block/rune_station_side",
+    "top": "minecraft:block/blast_furnace_side"
+  }
+}

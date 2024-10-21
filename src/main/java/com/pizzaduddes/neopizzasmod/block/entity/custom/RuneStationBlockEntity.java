@@ -130,18 +130,10 @@ public class RuneStationBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     private void craftItem() {
-        ItemStack outputDefault = new ItemStack(ModItems.TANZANITE.get());
-        ItemStack outputWater = new ItemStack(ModItems.RAW_TANZANITE.get());
-        if (current_recipe == 0) {
+        ItemStack outputDefault = new ItemStack(ModItems.RUNE_ENERGY_UNFILLED.get());
             inventoryrs.extractItem(INPUT_SLOT, 1, false);
             inventoryrs.setStackInSlot(OUTPUT_SLOT, new ItemStack(outputDefault.getItem(),
                     inventoryrs.getStackInSlot(OUTPUT_SLOT).getCount() + outputDefault.getCount()));
-        } else if (current_recipe == 1){
-            inventoryrs.extractItem(INPUT_SLOT, 1, false);
-            inventoryrs.setStackInSlot(OUTPUT_SLOT, new ItemStack(outputWater.getItem(),
-                    inventoryrs.getStackInSlot(OUTPUT_SLOT).getCount() + outputWater.getCount()));
-        }
-
     }
 
     private boolean hasCraftingFinished() {

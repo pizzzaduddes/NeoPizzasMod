@@ -13,7 +13,7 @@ public class ModItems {
 
 
     public static final DeferredItem<Item> RUNE_ROCK = ITEMS.register("rune_rock",
-            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> TANZANITE = ITEMS.register("tanzanite",
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
@@ -23,6 +23,11 @@ public class ModItems {
 
     public static final DeferredItem<Item> ANTI_SMELTER = ITEMS.register("anti_smelter",
             () -> new AntiSmelterItem(new Item.Properties().durability(256)));
+
+    // Energy Rune
+
+    public static final DeferredItem<Item> RUNE_ENERGY_UNFILLED = ITEMS.register("rune_energy_unfilled",
+            () -> new Item(new Item.Properties().fireResistant()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

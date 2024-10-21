@@ -1,4 +1,5 @@
-// 1.21	2024-08-12T10:10:20.2336867	Tags for minecraft:block mod id neopizzasmod
-928b9849c5a653df96ce6d19cee1f1e2f2f02164 data/minecraft/tags/block/mineable/pickaxe.json
+// 1.21	2024-10-21T13:01:00.9760635	Tags for minecraft:block mod id neopizzasmod
+2d08513b71fa0eca488bc2321b7d2c5c950030b4 data/minecraft/tags/block/mineable/pickaxe.json
 8b1f2cd6b76cd7a9474ea804ab7ad0d796015683 data/minecraft/tags/block/needs_diamond_tool.json
 c0998c0bd07af5716dfc7075bb0d2cd17c9cb262 data/minecraft/tags/block/needs_iron_tool.json
+8a830e5c8c2d41e1985a44b93ddab7a2d59275f1 data/minecraft/tags/block/needs_stone_tool.json
