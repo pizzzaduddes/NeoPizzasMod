@@ -32,6 +32,7 @@ public class ModCreativeModeTabs {
                                 output.accept(ModBlocks.PEDESTAL.get());
                                 output.accept(ModBlocks.RUNE_STATION.get());
                                 output.accept(ModItems.RUNE_ROCK.get());
+                                output.accept(ModItems.RUNE_ENERGY_UNFILLED.get());
                             })
                             .build());
 

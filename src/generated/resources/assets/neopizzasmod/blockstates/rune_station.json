@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "neopizzasmod:block/rune_station",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "neopizzasmod:block/rune_station"
+    },
+    "facing=south": {
+      "model": "neopizzasmod:block/rune_station",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "neopizzasmod:block/rune_station",
+      "y": 270
+    }
+  }
+}

@@ -4,6 +4,7 @@ import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
 import com.pizzaduddes.neopizzasmod.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -24,7 +25,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.RAW_TANZANITE_BLOCK);
         blockWithItem(ModBlocks.TANZANITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_TANZANITE_ORE);
-        blockWithItem(ModBlocks.RUNE_STATION);
+
+        horizontalBlock(ModBlocks.RUNE_STATION.get(), models().orientableWithBottom("neopizzasmod:rune_station",
+                modLoc("block/rune_station_side"),
+                modLoc("block/rune_station_front"),
+                modLoc("block/rune_station_top"),
+                mcLoc("block/blast_furnace_bottom")));
     }
 
     private void blockWithItem(DeferredBlock<Block> deferredBlock) {
