@@ -61,8 +61,6 @@ public class RuneStationScreen extends AbstractContainerScreen<RuneStationMenu> 
 
     private void onButtonWaterPressed() {
         RuneStationBlockEntity blockEntity = this.menu.getBlockEntity();
-        System.out.println(blockEntity.current_recipe);
         blockEntity.current_recipe = 1;
-        System.out.println(blockEntity.current_recipe);
     }
 }

@@ -114,7 +114,7 @@ configurations {
 }
 
 dependencies {
-    // Example optional mod dependency with JEI
+    implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
     // compileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
@@ -173,6 +173,14 @@ publishing {
         maven {
             url "file://${project.projectDir}/repo"
         }
+        maven {
+            name = 'GeckoLib'
+            url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+            content {
+                includeGroup("software.bernie.geckolib")
+            }
+        }
+
     }
 }
 
