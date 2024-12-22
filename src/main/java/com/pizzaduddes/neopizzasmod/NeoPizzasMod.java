@@ -9,6 +9,8 @@ import com.pizzaduddes.neopizzasmod.screen.custom.PedestalScreen;
 import com.pizzaduddes.neopizzasmod.screen.custom.RuneStationScreen;
 import com.pizzaduddes.neopizzasmod.ui.ModCreativeModeTabs;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
@@ -65,6 +67,8 @@ public class NeoPizzasMod {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
+
+
     private void commonSetup(final FMLCommonSetupEvent event) {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
@@ -94,7 +98,7 @@ public class NeoPizzasMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.TEMP_BLOCK.get(), RenderType.translucent());
         }
 
         @SubscribeEvent
@@ -107,5 +111,7 @@ public class NeoPizzasMod {
             event.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
             event.register(ModMenuTypes.RUNE_STATION_MENU.get(), RuneStationScreen::new);
         }
+
+
     }
 }

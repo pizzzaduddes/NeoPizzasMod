@@ -1,7 +1,8 @@
-// 1.21	2024-10-21T13:01:00.9604399	Loot Tables
+// 1.21	2024-12-21T18:01:36.3160787	Loot Tables
 e920b377e238fb04a58a62d514c304e452c7da0c data/neopizzasmod/loot_table/blocks/deepslate_tanzanite_ore.json
 5497a3a7e976baa55bede9c58968b52c12841873 data/neopizzasmod/loot_table/blocks/pedestal.json
 9ba45369e8f34287e983d5a069fa7cdd8d5f2a3d data/neopizzasmod/loot_table/blocks/raw_tanzanite_block.json
 ec8343d86438646c46c38af43eb84df7bae3002d data/neopizzasmod/loot_table/blocks/rune_station.json
 b17d1b604ed3e89e39eb7aae5beba0e06af90861 data/neopizzasmod/loot_table/blocks/tanzanite_block.json
 bc68a30ff253b3a1368222945db20e1764207e0d data/neopizzasmod/loot_table/blocks/tanzanite_ore.json
+854f4281ec487be74eb7d7925d9fbca5d089ce75 data/neopizzasmod/loot_table/blocks/temp_block.json

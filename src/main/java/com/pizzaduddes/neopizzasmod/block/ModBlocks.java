@@ -3,12 +3,11 @@ package com.pizzaduddes.neopizzasmod.block;
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
 import com.pizzaduddes.neopizzasmod.block.custom.PedestalBlock;
 import com.pizzaduddes.neopizzasmod.block.custom.RuneStationBlock;
+import com.pizzaduddes.neopizzasmod.block.custom.TempBlock;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -43,6 +42,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PEDESTAL = registerBlock("pedestal",
             () -> new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SMOOTH_STONE)
                     .noOcclusion()));
+
+    public static final DeferredBlock<Block> TEMP_BLOCK = registerBlock("temp_block",
+            () -> new TempBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
