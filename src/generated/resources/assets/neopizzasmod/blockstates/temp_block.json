@@ -1,7 +1,9 @@
 {
   "variants": {
-    "": {
-      "model": "neopizzasmod:block/temp_block"
-    }
+    "temp=0": { "model": "neopizzasmod:block/temp_block_0" },
+    "temp=1": { "model": "neopizzasmod:block/temp_block_1" },
+    "temp=2": { "model": "neopizzasmod:block/temp_block_2" },
+    "temp=3": { "model": "neopizzasmod:block/temp_block_3" },
+    "temp=4": { "model": "neopizzasmod:block/temp_block_4" }
   }
 }

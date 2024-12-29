@@ -36,7 +36,7 @@ public class RuneStationBlockEntity extends BlockEntity implements MenuProvider 
         }
     };
 
-    public int current_recipe = 0;
+
     private static final int ENERGY_ITEM_SLOT = 0;
     private static final int INPUT_SLOT = 1;
     private static final int OUTPUT_SLOT = 2;
@@ -151,7 +151,7 @@ public class RuneStationBlockEntity extends BlockEntity implements MenuProvider 
 
     private boolean hasRecipe() {
         ItemStack input = new ItemStack(ModItems.RUNE_ROCK.get());
-        ItemStack output = new ItemStack(ModItems.TANZANITE.get());
+        ItemStack output = new ItemStack(ModItems.RUNE_ENERGY_UNFILLED.get());
 
         return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) &&
                 this.inventoryrs.getStackInSlot(INPUT_SLOT).getItem() == input.getItem();
