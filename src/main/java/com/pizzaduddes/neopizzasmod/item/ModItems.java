@@ -2,6 +2,7 @@ package com.pizzaduddes.neopizzasmod.item;
 
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
 import com.pizzaduddes.neopizzasmod.item.custom.AntiSmelterItem;
+import com.pizzaduddes.neopizzasmod.item.custom.TempStickItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
@@ -23,6 +24,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> ANTI_SMELTER = ITEMS.register("anti_smelter",
             () -> new AntiSmelterItem(new Item.Properties().durability(256)));
+
+    public static final DeferredItem<Item> TEMP_STICK = ITEMS.register("temp_stick",
+            () -> new TempStickItem(new Item.Properties().rarity(Rarity.EPIC)));
 
     // Energy Rune
 

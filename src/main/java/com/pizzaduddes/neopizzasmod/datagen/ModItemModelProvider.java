@@ -17,6 +17,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_TANZANITE.get());
         basicItem(ModItems.ANTI_SMELTER.get());
         basicItem(ModItems.RUNE_ROCK.get());
+        basicItem(ModItems.TEMP_STICK.get());
 
         //Energy Rune
 

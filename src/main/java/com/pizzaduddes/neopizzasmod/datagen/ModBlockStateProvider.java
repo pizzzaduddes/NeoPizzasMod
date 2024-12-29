@@ -25,7 +25,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.RAW_TANZANITE_BLOCK);
         blockWithItem(ModBlocks.TANZANITE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_TANZANITE_ORE);
-        blockWithItem(ModBlocks.TEMP_BLOCK);
 
         horizontalBlock(ModBlocks.RUNE_STATION.get(), models().orientableWithBottom("neopizzasmod:rune_station",
                 modLoc("block/rune_station_side"),

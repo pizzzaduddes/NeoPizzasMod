@@ -14,6 +14,8 @@
   "item.neopizzasmod.rune_rock": "Rune Rock",
   "block.neopizzasmod.rune_station": "Rune Station",
   "blockentity.neopizzasmod.rune_station": "Skibidi Station",
+  "block.neopizzasmod.temp_block": "Temperature Block",
+  "item.neopizzasmod.temp_stick": "Temperature Stick",
 
   "item.neopizzasmod.rune_energy_unfilled": "Unfilled Energy Rune",
 
