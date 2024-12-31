@@ -52,8 +52,11 @@ public class TempBlock extends BaseEntityBlock {
             return null;
         }
 
-        return createTickerHelper(blockEntityType, ModBlockEntities.TEMP_BE.get(),
-                 (level1, blockPos, blockState, blockEntity) -> TempBlockEntity.tick1(level1, blockPos, blockState, blockEntity));
+        return createTickerHelper(blockEntityType, ModBlockEntities.TEMP_BE.get(), (level1, blockPos, blockState, blockEntity) -> {
+            if (blockEntity instanceof TempBlockEntity tempBlockEntity){
+                tempBlockEntity.tick1(level1, blockPos, blockState, blockEntity);
+            }
+        });
     }
     
 
