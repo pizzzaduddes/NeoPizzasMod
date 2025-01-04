@@ -18,6 +18,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ANTI_SMELTER.get());
         basicItem(ModItems.RUNE_ROCK.get());
         basicItem(ModItems.TEMP_STICK.get());
+        basicItem(ModItems.FIXED_TEMP_STICK.get());
 
         //Energy Rune
 

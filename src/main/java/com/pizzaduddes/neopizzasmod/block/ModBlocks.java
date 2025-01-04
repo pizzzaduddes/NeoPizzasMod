@@ -1,9 +1,7 @@
 package com.pizzaduddes.neopizzasmod.block;
 
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
-import com.pizzaduddes.neopizzasmod.block.custom.PedestalBlock;
-import com.pizzaduddes.neopizzasmod.block.custom.RuneStationBlock;
-import com.pizzaduddes.neopizzasmod.block.custom.TempBlock;
+import com.pizzaduddes.neopizzasmod.block.custom.*;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -45,6 +43,12 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> TEMP_BLOCK = registerBlock("temp_block",
             () -> new TempBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).noOcclusion()));
+
+    public static final DeferredBlock<Block> CLAYED_MUD_BRICKS = registerBlock("clayed_mud_bricks",
+            () -> new ClayedMudBricksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICKS).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> CLAYED_MUD_OVEN = registerBlock("clayed_mud_oven",
+            () -> new ClayedMudOvenBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICKS).requiresCorrectToolForDrops()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

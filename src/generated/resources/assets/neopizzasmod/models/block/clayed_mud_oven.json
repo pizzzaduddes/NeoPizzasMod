@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "neopizzasmod:block/clayed_mud_bricks",
+    "front": "neopizzasmod:block/clayed_mud_oven",
+    "side": "neopizzasmod:block/clayed_mud_bricks",
+    "top": "neopizzasmod:block/clayed_mud_bricks"
+  }
+}

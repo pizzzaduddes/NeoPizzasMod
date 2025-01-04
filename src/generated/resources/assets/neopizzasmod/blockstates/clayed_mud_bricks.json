@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "neopizzasmod:block/clayed_mud_bricks",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "neopizzasmod:block/clayed_mud_bricks"
+    },
+    "facing=south": {
+      "model": "neopizzasmod:block/clayed_mud_bricks",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "neopizzasmod:block/clayed_mud_bricks",
+      "y": 270
+    }
+  }
+}

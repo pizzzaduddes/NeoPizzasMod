@@ -31,6 +31,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 modLoc("block/rune_station_front"),
                 modLoc("block/rune_station_top"),
                 mcLoc("block/blast_furnace_top")));
+
+        horizontalBlock(ModBlocks.CLAYED_MUD_OVEN.get(), models().orientableWithBottom("neopizzasmod:clayed_mud_oven",
+                modLoc("block/clayed_mud_bricks"),
+                modLoc("block/clayed_mud_oven"),
+                modLoc("block/clayed_mud_bricks"),
+                modLoc("block/clayed_mud_bricks")));
+
+        horizontalBlock(ModBlocks.CLAYED_MUD_BRICKS.get(), models().orientableVertical("neopizzasmod:clayed_mud_bricks",
+                modLoc("block/clayed_mud_bricks"),
+                modLoc("block/clayed_mud_bricks")));
+
+        simpleBlockItem(ModBlocks.CLAYED_MUD_BRICKS.get(), models().orientableVertical("neopizzasmod:clayed_mud_bricks",
+                modLoc("block/clayed_mud_bricks"),
+                modLoc("block/clayed_mud_bricks")));
+
+        simpleBlockItem(ModBlocks.CLAYED_MUD_OVEN.get(), models().orientableWithBottom("neopizzasmod:clayed_mud_oven",
+                modLoc("block/clayed_mud_bricks"),
+                modLoc("block/clayed_mud_oven"),
+                modLoc("block/clayed_mud_bricks"),
+                modLoc("block/clayed_mud_bricks")));
     }
 
     private void blockWithItem(DeferredBlock<Block> deferredBlock) {

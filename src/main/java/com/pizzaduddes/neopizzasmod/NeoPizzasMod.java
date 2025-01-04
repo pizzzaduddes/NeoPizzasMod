@@ -7,18 +7,17 @@ import com.pizzaduddes.neopizzasmod.component.ModDataComponentTypes;
 import com.pizzaduddes.neopizzasmod.screen.ModMenuTypes;
 import com.pizzaduddes.neopizzasmod.screen.custom.PedestalScreen;
 import com.pizzaduddes.neopizzasmod.screen.custom.RuneStationScreen;
-import com.pizzaduddes.neopizzasmod.ui.ModCreativeModeTabs;
+import com.pizzaduddes.neopizzasmod.creativetabs.ModCreativeModeTabs;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.api.distmarker.Dist;
@@ -93,6 +92,10 @@ public class NeoPizzasMod {
         LOGGER.info("HELLO from server starting");
     }
 
+    public static ResourceLocation resloc(String loc) {
+        return ResourceLocation.fromNamespaceAndPath(NeoPizzasMod.MODID, loc);
+    }
+
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
@@ -111,6 +114,8 @@ public class NeoPizzasMod {
             event.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
             event.register(ModMenuTypes.RUNE_STATION_MENU.get(), RuneStationScreen::new);
         }
+
+
 
 
     }

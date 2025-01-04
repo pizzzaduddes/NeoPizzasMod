@@ -1,4 +1,6 @@
-// 1.21	2024-12-21T18:01:36.3160787	Loot Tables
+// 1.21	2025-01-02T19:17:50.1786995	Loot Tables
+56a9739dded441ed7c79b00a8d0a5a74b2b46150 data/neopizzasmod/loot_table/blocks/clayed_mud_bricks.json
+4b401589174c2b37e12f3b12b938f1c9fa081464 data/neopizzasmod/loot_table/blocks/clayed_mud_oven.json
 e920b377e238fb04a58a62d514c304e452c7da0c data/neopizzasmod/loot_table/blocks/deepslate_tanzanite_ore.json
 5497a3a7e976baa55bede9c58968b52c12841873 data/neopizzasmod/loot_table/blocks/pedestal.json
 9ba45369e8f34287e983d5a069fa7cdd8d5f2a3d data/neopizzasmod/loot_table/blocks/raw_tanzanite_block.json

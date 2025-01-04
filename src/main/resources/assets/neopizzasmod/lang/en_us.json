@@ -16,6 +16,9 @@
   "blockentity.neopizzasmod.rune_station": "Skibidi Station",
   "block.neopizzasmod.temp_block": "Temperature Block",
   "item.neopizzasmod.temp_stick": "Temperature Stick",
+  "item.neopizzasmod.fixed_temp_stick": "Fixed Temperature Stick",
+  "block.neopizzasmod.clayed_mud_bricks": "Clayed Mud Bricks",
+  "block.neopizzasmod.clayed_mud_oven": "Clayed Mud Oven",
 
   "item.neopizzasmod.rune_energy_unfilled": "Unfilled Energy Rune",
 

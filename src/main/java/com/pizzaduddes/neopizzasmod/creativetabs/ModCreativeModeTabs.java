@@ -1,4 +1,4 @@
-package com.pizzaduddes.neopizzasmod.ui;
+package com.pizzaduddes.neopizzasmod.creativetabs;
 
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
 import com.pizzaduddes.neopizzasmod.block.ModBlocks;
@@ -34,6 +34,9 @@ public class ModCreativeModeTabs {
                                 output.accept(ModItems.RUNE_ROCK.get());
                                 output.accept(ModItems.RUNE_ENERGY_UNFILLED.get());
                                 output.accept(ModBlocks.TEMP_BLOCK.get());
+                                output.accept(ModItems.FIXED_TEMP_STICK.get());
+                                output.accept(ModBlocks.CLAYED_MUD_BRICKS.get());
+                                output.accept(ModBlocks.CLAYED_MUD_OVEN.get());
                             })
                             .build());
 

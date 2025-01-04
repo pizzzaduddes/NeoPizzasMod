@@ -28,6 +28,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PEDESTAL.get());
         dropSelf(ModBlocks.RUNE_STATION.get());
         dropSelf(ModBlocks.TEMP_BLOCK.get());
+        dropSelf(ModBlocks.CLAYED_MUD_BRICKS.get());
+        dropSelf(ModBlocks.CLAYED_MUD_OVEN.get());
     }
 
     @Override
