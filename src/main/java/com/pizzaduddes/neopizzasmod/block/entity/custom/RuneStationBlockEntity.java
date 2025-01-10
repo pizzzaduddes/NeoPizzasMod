@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 
-public class RuneStationBlockEntity extends BlockEntity implements MenuProvider {
+public class    RuneStationBlockEntity extends BlockEntity implements MenuProvider {
 
 
     public final ItemStackHandler inventoryrs = new ItemStackHandler(3) {

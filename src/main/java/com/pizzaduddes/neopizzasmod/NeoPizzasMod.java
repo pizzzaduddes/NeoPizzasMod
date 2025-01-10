@@ -4,6 +4,7 @@ import com.pizzaduddes.neopizzasmod.block.ModBlocks;
 import com.pizzaduddes.neopizzasmod.block.entity.ModBlockEntities;
 import com.pizzaduddes.neopizzasmod.block.entity.renderer.PedestalBlockEntityRenderer;
 import com.pizzaduddes.neopizzasmod.component.ModDataComponentTypes;
+import com.pizzaduddes.neopizzasmod.mob_effects.ModMobEffects;
 import com.pizzaduddes.neopizzasmod.screen.ModMenuTypes;
 import com.pizzaduddes.neopizzasmod.screen.custom.PedestalScreen;
 import com.pizzaduddes.neopizzasmod.screen.custom.RuneStationScreen;
@@ -53,6 +54,7 @@ public class NeoPizzasMod {
         ModDataComponentTypes.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModMobEffects.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (NeoPizzasMod) to respond directly to events.
