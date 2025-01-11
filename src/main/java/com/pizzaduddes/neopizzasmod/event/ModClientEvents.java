@@ -1,30 +1,28 @@
 package com.pizzaduddes.neopizzasmod.event;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
+import com.pizzaduddes.neopizzasmod.item.custom.AbilityItem;
 import com.pizzaduddes.neopizzasmod.item.custom.SwordOfDarknessItem;
 import com.pizzaduddes.neopizzasmod.mob_effects.ModMobEffects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.client.event.RenderGuiEvent;
 import net.neoforged.neoforge.client.event.RenderLivingEvent;
-import net.neoforged.neoforge.event.entity.living.LivingAttackEvent;
 import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
 
@@ -44,22 +42,30 @@ public class ModClientEvents {
 
         ItemStack mainHandItem = minecraft.player.getMainHandItem();
         ItemStack offHandItem = minecraft.player.getOffhandItem();
-
-        boolean isHoldingItem = mainHandItem.getItem() == ModItems.SWORD_OF_DARKNESS.get() || offHandItem.getItem() == ModItems.SWORD_OF_DARKNESS.get();
-
         int screenWidth = event.getGuiGraphics().guiWidth();
         int screenHeight = event.getGuiGraphics().guiHeight();
 
-        if (isHoldingItem) {
+        if (mainHandItem.getItem() instanceof AbilityItem || offHandItem.getItem() instanceof AbilityItem) {
             renderItsAbility(screenWidth, screenHeight, guiGraphics, player);
         }
     }
 
-    private static void renderAbilityFrame(int yOffset, int screenWidth, int screenHeight, GuiGraphics guiGraphics) {
+ /**   private static void renderAbilityFrame(int yOffset, int screenWidth, int screenHeight, GuiGraphics guiGraphics) {
         int xpos = screenWidth / 64;
         int ypos = ((screenHeight / 2) - 12) + yOffset;
 
         guiGraphics.blit(ABILITY_FRAME, xpos, ypos, 0, 0, 24, 24, 24, 24);
+    }
+ */
+    private static void renderAbilityFrame(GuiGraphics guiGraphics, int numberOfFrames, int gapBetweenFrames) {
+        int screenWidth = guiGraphics.guiWidth();
+        int screenHeight = guiGraphics.guiHeight();
+        int xpos = screenWidth / 64;
+        int ypos = (screenHeight / 2) - 12;
+        for (int i = 0; i < numberOfFrames; i++) {
+            int currentY = ypos + (i * (24 + gapBetweenFrames));
+            guiGraphics.blit(ABILITY_FRAME, xpos, currentY, 0, 0, 24, 24, 24, 24);
+        }
     }
 
     private static void renderItsAbility(int screenWidth, int screenHeight, GuiGraphics guiGraphics, Player player) {
@@ -67,7 +73,7 @@ public class ModClientEvents {
         int xpos = screenWidth / 64;
         int ypos = (screenHeight / 2) - 12;
 
-        renderAbilityFrame(0, screenWidth, screenHeight, guiGraphics);
+        renderAbilityFrame(guiGraphics, 3, 5);
         guiGraphics.blit(INTO_THE_SHADOWS_ABILITY, xpos, ypos, 0, 0, 24, 24, 24, 24);
 
         if (SwordOfDarknessItem.getCooldown()) {
@@ -83,6 +89,25 @@ public class ModClientEvents {
         }
     }
 
+    @SubscribeEvent
+    public static void onMouseScroll(InputEvent.MouseScrollingEvent event){
+        Minecraft minecraft = Minecraft.getInstance();
+        if (minecraft.player == null){
+            return;
+        }
+
+        Player player = minecraft.player;
+
+        ItemStack mainHandItem = player.getMainHandItem();
+        if (mainHandItem.getItem() instanceof AbilityItem abilityItem) {
+            boolean isCtrlPressed = Screen.hasControlDown();
+            if (isCtrlPressed) {
+                event.setCanceled(true);
+                double scrollDeltaY = event.getScrollDeltaY();
+                abilityItem.onScroll(player, scrollDeltaY);
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void onRenderLiving(RenderLivingEvent.Pre<?, ?> event) {

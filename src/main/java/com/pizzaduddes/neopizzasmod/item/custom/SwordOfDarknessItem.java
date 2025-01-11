@@ -4,10 +4,12 @@ import com.mojang.datafixers.kinds.IdF;
 import com.pizzaduddes.neopizzasmod.item.ModItems;
 import com.pizzaduddes.neopizzasmod.mob_effects.ModMobEffects;
 import com.pizzaduddes.neopizzasmod.mob_effects.custom.InconceivableMobEffect;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -20,12 +22,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class SwordOfDarknessItem extends Item {
+public class SwordOfDarknessItem extends Item implements AbilityItem {
     public SwordOfDarknessItem(Properties properties) {
         super(properties);
     }
-    public int cooldownTicksSOD = 0;
     private static boolean isCooldownActiveSOD = false;
+    private static int currentAbility = 0;
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
@@ -38,7 +40,7 @@ public class SwordOfDarknessItem extends Item {
             }
         }
 
-        return InteractionResultHolder.success(player.getItemInHand(usedHand));
+        return InteractionResultHolder.pass(player.getItemInHand(usedHand));
     }
 
     @Override
@@ -58,5 +60,24 @@ public class SwordOfDarknessItem extends Item {
     public static float getRemainingCooldown(Player player) {
         float remainingCooldown = player.getCooldowns().getCooldownPercent(ModItems.SWORD_OF_DARKNESS.get(), 0.0f );
         return remainingCooldown;
+    }
+
+    public static int getCurrentAbility() {
+        return currentAbility;
+    }
+
+    public static void setCurrentAbility(int newAbility) {
+        currentAbility = newAbility;
+    }
+
+    @Override
+    public void onScroll(Player player, double scrollDelta) {
+            if (scrollDelta > 0.2) {
+                SwordOfDarknessItem.setCurrentAbility(currentAbility + 1);
+            } else if (scrollDelta < -0.2) {
+                SwordOfDarknessItem.setCurrentAbility(currentAbility - 1);
+            }
+            currentAbility = Mth.clamp(currentAbility, 0, 2);
+            player.sendSystemMessage(Component.literal("Current Ability: " + currentAbility));
     }
 }
