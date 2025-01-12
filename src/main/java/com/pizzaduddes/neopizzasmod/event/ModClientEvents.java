@@ -2,15 +2,13 @@ package com.pizzaduddes.neopizzasmod.event;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
-import com.pizzaduddes.neopizzasmod.item.ModItems;
-import com.pizzaduddes.neopizzasmod.item.custom.AbilityItem;
-import com.pizzaduddes.neopizzasmod.item.custom.SwordOfDarknessItem;
+import com.pizzaduddes.neopizzasmod.item.custom.ability_item.AbilityItem;
+import com.pizzaduddes.neopizzasmod.item.custom.ability_item.SwordOfDarknessItem;
 import com.pizzaduddes.neopizzasmod.mob_effects.ModMobEffects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
@@ -26,9 +24,6 @@ import net.neoforged.neoforge.client.event.RenderGuiEvent;
 import net.neoforged.neoforge.client.event.RenderLivingEvent;
 import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 import net.neoforged.neoforge.event.entity.living.MobEffectEvent;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 @EventBusSubscriber(modid = NeoPizzasMod.MODID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
@@ -54,22 +49,31 @@ public class ModClientEvents {
         }
     }
 
- /**   private static void renderAbilityFrame(int yOffset, int screenWidth, int screenHeight, GuiGraphics guiGraphics) {
-        int xpos = screenWidth / 64;
-        int ypos = ((screenHeight / 2) - 12) + yOffset;
-
-        guiGraphics.blit(ABILITY_FRAME, xpos, ypos, 0, 0, 24, 24, 24, 24);
-    }
- */
-    private static int renderAbilityFrame(GuiGraphics guiGraphics, int numberOfFrames, int gapBetweenFrames) {
+    private static int renderAbilityFrame(GuiGraphics guiGraphics, int gapBetweenFrames) {
         int screenWidth = guiGraphics.guiWidth();
         int screenHeight = guiGraphics.guiHeight();
         int xpos = screenWidth / 64;
         int ypos = (screenHeight / 2) - 12;
-        for (int i = 0; i < numberOfFrames; i++) {
-            int currentY = ypos + (i * (24 + gapBetweenFrames));
-            guiGraphics.blit(ABILITY_FRAME, xpos, currentY, 0, 0, 24, 24, 24, 24);
+        Minecraft minecraft = Minecraft.getInstance();
+        LocalPlayer player = minecraft.player;
+        ItemStack mainHandItem = player.getMainHandItem();
+        ItemStack offHandItem = player.getOffhandItem();
+        AbilityItem abilityItem = null;
+        if (mainHandItem.getItem() instanceof AbilityItem mainHandAbilityItem) {
+            abilityItem = mainHandAbilityItem;
+        } else if (player.getOffhandItem().getItem() instanceof AbilityItem offHandAbilityItem) {
+            abilityItem = offHandAbilityItem;
         }
+
+        int numberOfFrames = 0;
+        if (abilityItem != null) {
+            numberOfFrames = abilityItem.abilityAmount();
+            for (int i = 0; i < numberOfFrames; i++) {
+                int currentY = ypos + (i * (24 + gapBetweenFrames));
+                guiGraphics.blit(ABILITY_FRAME, xpos, currentY, 0, 0, 24, 24, 24, 24);
+            }
+        }
+
         return numberOfFrames;
     }
 
@@ -78,7 +82,7 @@ public class ModClientEvents {
         int xpos = screenWidth / 64;
         int ypos = (screenHeight / 2) - 12;
 
-        renderAbilityFrame(guiGraphics, numberOfFrames, gapBetweenFrames);
+        renderAbilityFrame(guiGraphics, gapBetweenFrames);
         for (int i = 0; i < numberOfFrames; i++) {
             int currentY = ypos + (i * (24 + gapBetweenFrames));
             guiGraphics.blit(INTO_THE_SHADOWS_ABILITY, xpos, currentY, 0, 0, 24, 24, 24, 24);

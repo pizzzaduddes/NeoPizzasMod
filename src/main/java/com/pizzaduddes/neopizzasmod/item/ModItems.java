@@ -3,7 +3,7 @@ package com.pizzaduddes.neopizzasmod.item;
 import com.pizzaduddes.neopizzasmod.NeoPizzasMod;
 import com.pizzaduddes.neopizzasmod.item.custom.AntiSmelterItem;
 import com.pizzaduddes.neopizzasmod.item.custom.FixedTempStickItem;
-import com.pizzaduddes.neopizzasmod.item.custom.SwordOfDarknessItem;
+import com.pizzaduddes.neopizzasmod.item.custom.ability_item.SwordOfDarknessItem;
 import com.pizzaduddes.neopizzasmod.item.custom.TempStickItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
